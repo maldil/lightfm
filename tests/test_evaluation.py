@@ -116,7 +116,7 @@ def _recall_at_k(
         if true_pids:
             recalls.append(len(top_k & true_pids) / float(len(true_pids)))
 
-    return sum(recalls) / len(recalls)
+    return np.mean(recalls)
 
 
 def _auc(model, ground_truth, train=None, user_features=None, item_features=None):
