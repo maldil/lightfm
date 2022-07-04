@@ -72,7 +72,7 @@ def _precision_at_k(
         if true_pids:
             precisions.append(len(top_k & true_pids) / float(k))
 
-    return sum(precisions) / len(precisions)
+    return np.mean(precisions)
 
 
 def _recall_at_k(
